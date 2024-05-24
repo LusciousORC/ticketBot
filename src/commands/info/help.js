@@ -15,7 +15,7 @@ module.exports = [{
   > • <> - required ex, $getGuildVar[prefix]ban <user> 
   > • [] - optional ex. $getGuildVar[prefix]ban <user> [reason]
   ]
-  $image[1;https://cdn.discordapp.com/attachments/933072422276587580/1168641965387169792/Projekt_bez_nazwy_2.png?ex=655281a4&is=65400ca4&hm=7365a00fdd56fb9fd93c90146fd051d07029d938a49340bfea6fc461e3a9053b&]
+ 
   $footer[1;Called up $usertag[$authorID]]
   $color[1;Orange]
   $addSelectMenu[1;string;menu;Select category;1;1;false;Moderation commands:List of all commands for moderating the server:helpValue0:false:<#COLON#admin#COLON#1040680731803930776>;Tickets:List of commands for tickets:helpValue1:false:<#COLON#info#COLON#1040680817048956948>;Information commands:Providing important information to users:helpValue2:false:<#COLON#level#COLON#1040680884384305162>;Misc:View all other commands.:helpValue3:false:<#COLON#welcome#COLON#1040681050541662280>]
@@ -37,7 +37,7 @@ module.exports = [{
   $else
       $reply[$messageID;false]
       $title[1;Error]
-      $description[1;Command not found: $message[1]]
+      $description[1;Command not found: \`$message[1]\`]
       $color[1;Red]
   $endif
 $endif
@@ -80,7 +80,9 @@ $onlyIf[$interactionData[values[0]]==helpValue0;]
   type : 'interaction',
   prototype : 'selectMenu',
 code: `
-$interactionUpdate[;{newEmbed:{description:\`$getGuildVar[prefix]panel\` - $commandInfo[panel;description]}{footer:Called $usertag[$authorID]}
+$interactionUpdate[;{newEmbed:{description:\`$getGuildVar[prefix]panel\` - $commandInfo[panel;description]
+\`$getGuildVar[prefix]transcript\` - $commandInfo[transcript;description]
+}{footer:Called $usertag[$authorID]}
 {author:• Tickets Commands:$userAvatar[$clientID]}
 {color:Orange}};
 {actionRow: {selectMenu:menu:Select Category:1:1:false:

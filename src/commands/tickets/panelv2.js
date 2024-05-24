@@ -70,6 +70,9 @@ module.exports = [
         `
     },{
         name: "transcript",
+        description: "Gets the content of the channel ",
+        aliases: "trans",
+        usage: "transcript [#channel]",
         code:` 
         $description[1;Transcript from channel: <#$findChannel[$message;true]>]
         $transcript[$findChannel[$message;true]]

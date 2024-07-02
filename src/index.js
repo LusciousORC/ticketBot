@@ -1,8 +1,8 @@
 const { AoiClient, LoadCommands } = require("aoi.js");
-require('dotenv').config()
+
 
 const client = new AoiClient({
-  token: process.env.TOKEN,
+  token: "",
   prefix: ["$getGuildVar[prefix]","<@!$clientID>","<@$clientID>"],
   intents: ["MessageContent", "Guilds", "GuildMessages"],
   events: ["onMessage", "onInteractionCreate"],

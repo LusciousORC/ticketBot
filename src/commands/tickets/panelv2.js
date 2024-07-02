@@ -1,21 +1,5 @@
 module.exports = [
-    /*{
-        name: "setrole",
-        code: `
-		$setGuildVar[ticketrole;$findRole[$message[1];$guildID]]
-
-		$author[1;$username;$userAvatar[$authorID]]
-		$description[1;The <@&$findRole[$message[1];$guildID]> role has been set as the ticket moderation role.]
-		$color[1;Random]
-
-		$onlyIf[$roleExists[$findRole[$message[1];$guildID];$guildID]==true;The chosen role was not found or does not exist]
-
-		$onlyIf[$message[1]!=;You must mention or write the name/ID of the role you want to set as the ticket moderator.]
-		
-		$onlyPerms[manageroles;You do not have the necessary permissions to set the ticket role]
-
-`
-    }*/,{
+    {
         name: "panel",
         description: "Creates and sends a tickets panel to a channel",
         aliases: "p",
